@@ -29,16 +29,16 @@ jobs:
       - name: Build and Push Backend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./springbootbackend
-          file: ./springbootbackend/backend.Dockerfile
+          context: ./BACKEND
+          file: ./BACKEND/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ansible-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/ansible-backend1:latest
 
       # Step 5 — Build & Push Frontend Image
       - name: Build and Push Frontend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./reactfrontend
-          file: ./reactfrontend/frontend.Dockerfile
+          context: ./FRONTEND
+          file: ./FRONTEND/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ansible-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/ansible-frontend1:latest
